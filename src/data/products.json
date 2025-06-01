@@ -1,0 +1,357 @@
+{
+  "products": [
+    {
+      "id": "prod_001",
+      "name": "CREME VISAGE REEN",
+      "brand": "2M Cosmetics",
+      "price": 7000,
+      "currency": "XOF",
+      "volume": "50G",
+      "description": {
+        "short": "Soin perfecteur & éclat durable",
+        "main": "Améliore la qualité de la peau, corrige les taches et unifie parfaitement le teint. Un soin d'exception pour un éclat durable.",
+        "benefits": "Inspirée des soins traditionnels, cette crème associe huile de bissap, niacinamide et extrait de réglisse pour estomper les taches, lisser le teint et renforcer la peau. En effet, l'extrait de réglisse sous sa forme avancée en dipotassium glycyrrhizate, apaise la peau et limite l'hyperpigmentation, tandis que l'huile précieuse de bissap revitalise la peau et révèle toute sa luminosité pour un éclat durable. Sa texture légère pénètre sans effort, laissant la peau hydratée, apaisée et visiblement plus lumineuse."
+      },
+      "properties": {
+        "naturalOrigin": "90%",
+        "texture": "Crème légère",
+        "pH": "4,5 - 5,5",
+        "skinType": "Tous types de peaux"
+      },
+      "usage": {
+        "when": "jour et/ou nuit",
+        "instructions": "Appliquez une noisette de crème sur le visage préalablement nettoyé et séché, après votre sérum habituel. Massez délicatement par des mouvements circulaires jusqu'à pénétration complète. Faites suivre de votre crème solaire (si c'est en jour)"
+      },
+      "activeIngredients": [
+        {
+          "name": "Huile de Bissap",
+          "description": "Riche en antioxydants et en acides gras essentiels, elle nourrit intensément et revitalise la peau pour un toucher doux et un éclat naturel."
+        },
+        {
+          "name": "Niacinamide",
+          "description": "Puissant perfecteur de peau, il unifie le teint, atténue les taches et renforce la barrière cutanée pour une peau visiblement plus lisse et éclatante."
+        },
+        {
+          "name": "Dipotassium Glycyrrhizate",
+          "description": "Actif avancé issu de la réglisse, il apaise, réduit l'inflammation et agit sur la production excessive de mélanine pour prévenir l'apparition de nouvelles taches."
+        }
+      ],
+      "fullIngredientsList": "Aqua, Niacinamide, Gylcerin, Aloe Barbadensis Leaf Gel, Propylene glycol, Alpha-arbutin, Sodium PCA, Cetearyl Olivate & Sorbitan Olivate, Hibiscus Sabdariffa Seed Oil, Butyrospermum Parkii Butter, Salicylic acid, Cetyl alcohol, Glyceryl stearate, Dipotassium Glycyrrhizate, Phenoxyethanol Diazolidinyl Urea, Iodopropynyl Butylcarbamate, Sodium phytate, Stearic acid, Tocopherols Citrus Aurantium Amara (Bitter Orange) Leaf, Citric acid, Sodium citrate, Fragrance",
+      "images": {
+        "main": "/images/products/creme-reen-main.jpg",
+        "gallery": ["/images/products/creme-reen-1.jpg"],
+        "thumbnail": "/images/products/creme-reen-thumb.jpg"
+      },
+      "pricing": {
+        "hasDiscount": false,
+        "originalPrice": null
+      },
+      "reviews": {
+        "count": 0,
+        "averageRating": null,
+        "hasReviews": false
+      },
+      "inventory": {
+        "inStock": true,
+        "quantity": 50
+      },
+      "seo": {
+        "slug": "creme-visage-reen"
+      },
+      "category": "cremes-visage",
+      "tags": ["eclat", "anti-taches", "unifiant", "naturel", "bissap", "niacinamide"],
+      "createdAt": "2024-06-01T00:00:00Z",
+      "updatedAt": "2024-06-01T00:00:00Z"
+    },
+    {
+      "id": "prod_002",
+      "name": "SERUM REEN ECLAT",
+      "brand": "2M Cosmetics",
+      "price": 10000,
+      "currency": "XOF",
+      "volume": "30ml",
+      "description": {
+        "short": "Correction avancée des taches, Éclat intensifié",
+        "main": "Action ciblée sur les hyperpigmentations, favorise un éclat avancé. Pour un teint uniforme et une peau ferme et rajeunie.",
+        "benefits": "L'hydrolat de moringa, reconnu pour ses propriétés antioxydantes et revitalisantes apaise et illumine la peau. Sa synergie avec la vitamine C stabilisée, l'acide tranexamique et le glutathion cible les taches pigmentaires, révèle l'éclat naturel de la peau et unifie le teint jour après jour."
+      },
+      "properties": {
+        "naturalOrigin": "90%",
+        "texture": "Gel aqueux léger",
+        "pH": "4,5 - 5,5",
+        "skinType": "Tous types de peaux"
+      },
+      "usage": {
+        "when": "jour et/ou nuit",
+        "instructions": "Appliquer 3 à 4 gouttes du sérum sur l'ensemble du visage préalablement nettoyé et séché le matin. Massez avec des gestes circulaires jusqu'à pénétration complète. Appliquer ensuite votre crème hydratante."
+      },
+      "activeIngredients": [
+        {
+          "name": "Hydrolat de moringa",
+          "description": "Apaisant et rafraîchissant, il aide à tonifier la peau tout en lui procurant un effet éclat instantané et une sensation de douceur."
+        },
+        {
+          "name": "Ethyl Ascorbic Acid",
+          "description": "Dérivé stabilisé de la vitamine C, il booste l'éclat, protège contre le stress oxydatif et favorise une peau visiblement plus lumineuse et revitalisée."
+        },
+        {
+          "name": "Acide Tranexamique",
+          "description": "Actif reconnu pour son action ciblée sur les taches pigmentaires, il aide à unifier le teint et à atténuer les irrégularités pour une peau plus homogène."
+        }
+      ],
+      "fullIngredientsList": "Aqua, Moringa oleifera leaf extract, Tranexamic Acid, 3-O-Ethyl Ascorbic Acid, Aloe Barbadensis Leaf Juice Glycerin, Propanediol, Monopropylene glycol, Glutathione,Tremella Fuciformis Extract, Phenoxyethanol Diazolidinyl Urea, Iodopropynyl Butylcarbamate, Iodopropynyl Butylcarbamate, Sodium phytate Allatoin, Sodium Citrate, Citric Acid, Fragrance",
+      "images": {
+        "main": "/images/products/serum-reen-eclat-main.jpg",
+        "gallery": ["/images/products/serum-reen-eclat-1.jpg"],
+        "thumbnail": "/images/products/serum-reen-eclat-thumb.jpg"
+      },
+      "pricing": {
+        "hasDiscount": false,
+        "originalPrice": null
+      },
+      "reviews": {
+        "count": 0,
+        "averageRating": null,
+        "hasReviews": false
+      },
+      "inventory": {
+        "inStock": true,
+        "quantity": 50
+      },
+      "seo": {
+        "slug": "serum-reen-eclat"
+      },
+      "category": "serums",
+      "tags": ["eclat", "anti-taches", "vitamine-c", "moringa", "hyperpigmentation", "unifiant"],
+      "createdAt": "2024-06-01T00:00:00Z",
+      "updatedAt": "2024-06-01T00:00:00Z"
+    },
+    {
+      "id": "prod_003",
+      "name": "GEL NETTOYANT REEN",
+      "brand": "2M Cosmetics",
+      "price": 9000,
+      "currency": "XOF",
+      "volume": "120ml",
+      "description": {
+        "short": "Purifiant & Anti-imperfections",
+        "main": "Nettoie en profondeur, aide à réguler le sébum et à réduire les imperfections. Pour une peau fraiche, douce et nette.",
+        "benefits": "Ce gel nettoyant doux associe des tensioactifs non agressifs à des actifs ciblés pour un nettoyage respectueux, même des peaux sensibles. Il élimine efficacement impuretés et excès de sébum sans agresser la peau. L'hydrolat de menthe poivrée rafraichit et purifie la peau e zinc PCA régule l'excès de sébum et prévient les imperfections. Le gel d'aloe vera, quant à lui, hydrate et apaise dès le nettoyage. Sa texture légère et moussante se rince facilement, laissant la peau douce et prête à recevoir les soins suivants."
+      },
+      "properties": {
+        "naturalOrigin": "90%",
+        "texture": "Formule douce",
+        "pH": "4,5 - 5,5",
+        "skinType": "Tous types de peaux"
+      },
+      "usage": {
+        "when": "jour et/ou nuit",
+        "instructions": "Appliquez une noisette de gel sur peau humide. Le gel s'émulsionne au contact de l'eau en une fine mousse. Massez le visage pendant quelque ssecondes puis rincez. Cette formule est composée de tensioactifs doux d'origine végétale, Ils sont non asséchants et nettoient la peau sans détériorer son film hydrolipidique pour une peau douce, souple et confortable."
+      },
+      "activeIngredients": [
+        {
+          "name": "Hydrolat de menthe poivrée",
+          "description": "Rafraîchit, tonifie et purifie naturellement."
+        },
+        {
+          "name": "Zinc PCA",
+          "description": "Actif purifiant et séborégulateur, il aide à réduire les brillances et à prévenir les imperfections."
+        },
+        {
+          "name": "Gel d'aloe vera",
+          "description": "Apaise, hydrate et réconforte la peau dès le nettoyage."
+        },
+        {
+          "name": "Huile essentielle de Tea Tree",
+          "description": "Reconnue pour ses propriétés antibactériennes et assainissantes, elle aide à purifier la peau en profondeur et à prévenir les éruptions cutanées."
+        }
+      ],
+      "fullIngredientsList": "Aqua, Sodium Laureth Sulfate, Glycerin, Decyl Glucoside, Cocamidopropyl Betaine, Aloe Barbadensis Leaf Juice, Mentha piperita leaf water, Sodium Chloride, Phenoxyethanol, Diazolidinyl Urea, Propylene Glycol, Iodopropynyl Butylcarbamate, Zinc PCA, Melaleuca Alternifolia Leaf Oil, Citric Acid",
+      "images": {
+        "main": "/images/products/gel-nettoyant-reen-main.jpg",
+        "gallery": ["/images/products/gel-nettoyant-reen-1.jpg"],
+        "thumbnail": "/images/products/gel-nettoyant-reen-thumb.jpg"
+      },
+      "pricing": {
+        "hasDiscount": false,
+        "originalPrice": null
+      },
+      "reviews": {
+        "count": 0,
+        "averageRating": null,
+        "hasReviews": false
+      },
+      "inventory": {
+        "inStock": true,
+        "quantity": 50
+      },
+      "seo": {
+        "slug": "gel-nettoyant-reen"
+      },
+      "category": "nettoyants",
+      "tags": ["purifiant", "anti-imperfections", "menthe-poivree", "zinc-pca", "tea-tree", "regulateur-sebum"],
+      "createdAt": "2024-06-01T00:00:00Z",
+      "updatedAt": "2024-06-01T00:00:00Z"
+    },
+    {
+      "id": "prod_004",
+      "name": "SERUM REEN BOUTONS",
+      "brand": "2M Cosmetics",
+      "price": 11000,
+      "currency": "XOF",
+      "volume": "30ml",
+      "description": {
+        "short": "Sérum antiboutons hydratation avancée",
+        "main": "Réduit efficacement les boutons, offre une hydratation avancée pour une barrière cutanée renforcée. Pour un teint net, frias et lumineux.",
+        "benefits": "Formulé autour de l'hydrolat de vétiver du Sénégal, reconnu pour ses vertus purifiantes et équilibrantes, il associe l'acide succinique, actif nouvelle génération anti-imperfections, à la tremella, qui apaise et lisse la peau. Ce sérum aide à réduire efficacement les boutons tout en respectant l'équilibre naturel. Sa texture légère pénètre rapidement, laissant la peau nette, fraîche et parfaitement rééquilibrée."
+      },
+      "properties": {
+        "naturalOrigin": "90%",
+        "texture": "Formule douce",
+        "pH": "4,5 - 5,5",
+        "skinType": "Tous types de peaux"
+      },
+      "usage": {
+        "when": "jour et/ou nuit",
+        "instructions": "Appliquer 3 à 4 gouttes du sérum sur l'ensemble du visage préalablement nettoyé et séché le matin. Massez avec des gestes circulaires jusqu'à pénétration complète. Appliquer ensuite votre crème hydratante."
+      },
+      "activeIngredients": [
+        {
+          "name": "Hydrolat de vetiver",
+          "description": "Purifiant et apaisant, il aide à calmer les rougeurs et à rééquilibrer la peau pour un teint plus uniforme et frais."
+        },
+        {
+          "name": "Acide Succinique",
+          "description": "Actif innovant aux propriétés kératolytiques douces, il cible efficacement les imperfections en aidant à réduire les boutons tout en respectant l'équilibre naturel de la peau."
+        },
+        {
+          "name": "Acide Hyaluronique",
+          "description": "Hydratant intense, il repulpe la peau et renforce sa barrière protectrice pour une souplesse et un confort durables."
+        }
+      ],
+      "fullIngredientsList": "Aqua, VETIVERIA ZIZANOIDES ROOT EXTRACT, Glycerin, Propanediol, Monopropylene glycol Sodium PCA, Succinic Acid, Phenoxyethanol, Diazolidinyl Urea, Iodopropynyl Butylcarbamate, Polyacrylamide, C13-14 Isoparaffin, Laureth-7, , Sodium phytate, Sodium Hyaluronate, Sodium Citrate, Citric Acid, Fragrance",
+      "images": {
+        "main": "/images/products/serum-reen-boutons-main.jpg",
+        "gallery": ["/images/products/serum-reen-boutons-1.jpg"],
+        "thumbnail": "/images/products/serum-reen-boutons-thumb.jpg"
+      },
+      "pricing": {
+        "hasDiscount": false,
+        "originalPrice": null
+      },
+      "reviews": {
+        "count": 0,
+        "averageRating": null,
+        "hasReviews": false
+      },
+      "inventory": {
+        "inStock": true,
+        "quantity": 50
+      },
+      "seo": {
+        "slug": "serum-reen-boutons"
+      },
+      "category": "serums",
+      "tags": ["anti-boutons", "vetiver", "acide-succinique", "hydratation", "anti-imperfections", "senegal"],
+      "createdAt": "2024-06-01T00:00:00Z",
+      "updatedAt": "2024-06-01T00:00:00Z"
+    },
+    {
+      "id": "prod_005",
+      "name": "LAIT DE CORPS REEN",
+      "brand": "2M Cosmetics",
+      "price": 8000,
+      "currency": "XOF",
+      "volume": "500ml",
+      "description": {
+        "short": "Correction des taches & Hydratation avancée",
+        "main": "Cible les marques visibles sur la peau, répare et restaure la peau, Unifie visiblement le teint. Pour une peau intensément hydratée, rajeunie et un teint parfaitement unifié et éclatant (sans éclaircissement excessif).",
+        "benefits": "Formulé autour des huiles de bissap et extraits de moringa, concentré en actifs arbutine et niacinamide, puissants correcteurs d'hyperpigmentation, ce lait hautement performant hydrate intensément, lisse le grain de peau et unifie le teint. Sa formule avancée enrichie en vitamine E et gel d'aloe réparent en profondeur pour une peau visiblement rajeunie. Jour après jour, la peau retrouve éclat, souplesse et perfection."
+      },
+      "properties": {
+        "naturalOrigin": "90%",
+        "texture": "texture légère sans résidus",
+        "pH": null,
+        "skinType": "Tous types de peaux"
+      },
+      "usage": {
+        "when": "jour et/ou nuit",
+        "instructions": "Appliquez une noisette de produit sur l'ensemble du corps après la douche. Massez délicatement pour faire pénétrer."
+      },
+      "activeIngredients": [
+        {
+          "name": "Huile de baobab et extrait de moringa",
+          "description": "Riches en antioxydants et en acides gras essentiels, ils nourrissent en profondeur, renforcent la barrière cutanée et restaurent l'élasticité de la peau."
+        },
+        {
+          "name": "Arbutine",
+          "description": "il cible les taches pigmentaires (et prévient leur réapparition) et uniformise le teint pour une peau visiblement plus éclatante."
+        },
+        {
+          "name": "Niacinamide",
+          "description": "Connue pour ses propriétés apaisantes et clarifiantes, elle aide à atténuer les irrégularités du teint tout en calmant la peau."
+        },
+        {
+          "name": "Allantoïne",
+          "description": "Actif réparateur et adoucissant, il favorise le renouvellement cellulaire et apaise les peaux sensibles pour une douceur incomparable."
+        },
+        {
+          "name": "Vitamine E",
+          "description": "Antioxydant puissant, elle protège la peau des agressions extérieures et préserve son éclat naturel."
+        }
+      ],
+      "fullIngredientsList": "Aqua, Hibiscus sabdariffa seed oil, Adansonia Digitata Seed Oil, Glycerin, Sodium PCA, Cetearyl Olivate & Sorbitan Olivate Propylene glycol, Aloe Barbadensis Leaf Juice, Daucus carota sativa seed oil, Tremella Fuciformis Extract, Butyrospermum Parkii Butter, Cetearyl Olivate & Sorbitan Olivate, Cetyl alcohol, Alpha-Arbutin, Phenoxyethanol, Moringa extract, Stearic acid, Diazolidinyl Urea, Iodopropynyl Butylcarbamate, Cetearyl Alcohol Tocopherols, Allantoin, Sodium citrate, Xanthan gum, Fragrance",
+      "images": {
+        "main": "/images/products/lait-corps-reen-main.jpg",
+        "gallery": ["/images/products/lait-corps-reen-1.jpg"],
+        "thumbnail": "/images/products/lait-corps-reen-thumb.jpg"
+      },
+      "pricing": {
+        "hasDiscount": false,
+        "originalPrice": null
+      },
+      "reviews": {
+        "count": 0,
+        "averageRating": null,
+        "hasReviews": false
+      },
+      "inventory": {
+        "inStock": true,
+        "quantity": 50
+      },
+      "seo": {
+        "slug": "lait-corps-reen"
+      },
+      "category": "soins-corps",
+      "tags": ["anti-taches", "hydratation", "arbutine", "niacinamide", "baobab", "moringa", "corps", "unifiant"],
+      "createdAt": "2024-06-01T00:00:00Z",
+      "updatedAt": "2024-06-01T00:00:00Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "nettoyants",
+      "name": "Nettoyants",
+      "description": "Nettoyants doux pour purifier votre peau",
+      "image": "/images/categories/nettoyants.jpg"
+    },
+    {
+      "id": "serums",
+      "name": "Sérums",
+      "description": "Sérums concentrés pour cibler vos préoccupations",
+      "image": "/images/categories/serums.jpg"
+    },
+    {
+      "id": "cremes-visage",
+      "name": "Crèmes Visage",
+      "description": "Crèmes nourrissantes pour hydrater votre visage",
+      "image": "/images/categories/cremes-visage.jpg"
+    },
+    {
+      "id": "soins-corps",
+      "name": "Soins Corps",
+      "description": "Soins corporels pour chouchouter votre peau",
+      "image": "/images/categories/soins-corps.jpg"
+    }
+  ]
+}
