@@ -1,6 +1,6 @@
 // src/components/layout/TestimonialsSection.tsx
 
-import Image from 'next/image'
+// import Image from 'next/image'
 import { Star } from 'lucide-react'
 
 const testimonials = [
