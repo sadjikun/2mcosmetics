@@ -19,45 +19,67 @@ export function ProductsSection() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {featuredProducts.map((product) => (
-            <div key={product.id} className="bg-white shadow-2xl transition-all duration-300 group relative">
-              {/* Image */}
-              <div className="w-full h-80 bg-brand-beige relative overflow-hidden">
+            <div key={product.id} className="bg-white group cursor-pointer p-8">
+              {/* Image avec overlay bouton au hover */}
+              <div className="relative bg-gray-100 overflow-hidden h-72">
                 <Image
                   src={product.images.main}
                   alt={product.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 300px"
                 />
+                
+                {/* Badge promo */}
                 {product.pricing.hasDiscount && product.pricing.originalPrice && (
                   <div className="absolute top-4 right-4 bg-brand-green text-white px-3 py-1 text-xs font-bold">
                     -{Math.round(((product.pricing.originalPrice - product.price) / product.pricing.originalPrice) * 100)}%
                   </div>
                 )}
-              </div>
-              
-              {/* Contenu */}
-              <div className="p-8 text-center space-y-4">
-                <h3 className="text-2xl font-display font-bold text-brand-brown">{product.name}</h3>
-                <p className="text-gray-600 text-lg">{product.description.short}</p>
                 
-                <div className="py-2">
-                  <span className="text-3xl font-bold text-brand-brown">
-                    {new Intl.NumberFormat('fr-FR').format(product.price)} {product.currency}
-                  </span>
-                  {product.pricing.hasDiscount && product.pricing.originalPrice && (
-                    <div className="text-sm text-gray-400 line-through mt-1">
-                      {new Intl.NumberFormat('fr-FR').format(product.pricing.originalPrice)}
-                    </div>
-                  )}
+                {/* Bouton hover - Desktop seulement */}
+                <div className="hidden md:flex absolute inset-0 bg-black/20 items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <button className="bg-brand-brown text-white px-8 py-3 font-semibold hover:bg-brand-brown/90 transition-colors">
+                    AJOUTER À LA CARTE
+                  </button>
                 </div>
               </div>
               
-              {/* Bouton - Toujours visible sur mobile, hover sur desktop */}
-              <div className="px-8 pb-8">
-                <button className="w-full bg-brand-brown text-white py-4 font-semibold text-lg hover:bg-brand-brown/90 transition-colors md:opacity-0 md:group-hover:opacity-100 md:transform md:translate-y-4 md:group-hover:translate-y-0 md:transition-all md:duration-300">
-                  AJOUTER À LA CARTE
-                </button>
+              {/* Contenu en dessous */}
+              <div className="pt-6 text-center space-y-3">
+                {/* Étoiles */}
+                <div className="flex justify-center space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <svg key={star} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                  ))}
+                </div>
+                
+                {/* Catégorie */}
+                <p className="text-gray-600 text-sm uppercase tracking-wider">{product.category}</p>
+                
+                {/* Nom du produit */}
+                <h3 className="text-2xl font-display font-bold text-gray-900">{product.name}</h3>
+                
+                {/* Prix */}
+                <div className="flex justify-center items-center space-x-3">
+                  <span className="text-xl font-bold text-gray-900">
+                    {new Intl.NumberFormat('fr-FR').format(product.price)} {product.currency}
+                  </span>
+                  {product.pricing.hasDiscount && product.pricing.originalPrice && (
+                    <span className="text-lg text-gray-400 line-through">
+                      {new Intl.NumberFormat('fr-FR').format(product.pricing.originalPrice)} {product.currency}
+                    </span>
+                  )}
+                </div>
+                
+                {/* Bouton mobile - Visible seulement sur mobile */}
+                <div className="md:hidden pt-4">
+                  <button className="w-full bg-brand-brown text-white py-3 font-semibold hover:bg-brand-brown/90 transition-colors">
+                    AJOUTER À LA CARTE
+                  </button>
+                </div>
               </div>
             </div>
           ))}
