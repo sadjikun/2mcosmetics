@@ -5,63 +5,51 @@ export interface Product {
   name: string;
   brand: string;
   price: number;
-  currency: string; // "XOF"
-  volume: string; // "50G", "30ml", "120ml", etc.
-  
+  currency: string;
+  volume: string;
   description: {
     short: string;
     main: string;
     benefits: string;
   };
-  
   properties: {
-    naturalOrigin: string; // "90%"
+    naturalOrigin: string;
     texture: string;
-    pH?: string; // "4,5 - 5,5"
-    skinType: string; // "Tous types de peaux"
+    pH?: string;
+    skinType: string;
   };
-  
   usage: {
-    when: string; // "jour et/ou nuit"
+    when: string;
     instructions: string;
   };
-  
   activeIngredients: Array<{
     name: string;
     description: string;
   }>;
-  
   fullIngredientsList: string;
-  
   images: {
     main: string;
     gallery: string[];
     thumbnail: string;
   };
-  
   pricing: {
     hasDiscount: boolean;
-    originalPrice?: number | null;
+    originalPrice?: number;
   };
-  
   reviews: {
     count: number;
-    averageRating?: number | null;
+    averageRating?: number;
     hasReviews: boolean;
   };
-  
   inventory: {
     inStock: boolean;
     quantity: number;
   };
-  
   seo: {
     slug: string;
   };
-  
   category: string;
   tags: string[];
-  
   createdAt: string;
   updatedAt: string;
 }
@@ -76,12 +64,7 @@ export interface ProductVariant {
   quantity: number;
 }
 
-// Type pour le panier
-export interface CartItem {
-  product: Product;
-  variant?: ProductVariant;
-  quantity: number;
-}
+
 
 // Types pour les catégories
 export interface Category {

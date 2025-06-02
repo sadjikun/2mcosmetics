@@ -1,103 +1,165 @@
 // src/store/cart.ts
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { CartItem, Product, ProductVariant } from '@/types/product';
+import type { Cart, CartItem, CartActions } from '@/types/cart';
+import type { Product } from '@/types/product';
 
-interface CartStore {
-  items: CartItem[];
+interface CartStore extends Cart, CartActions {
   isOpen: boolean;
-  
-  // Actions
-  addItem: (product: Product, variant?: ProductVariant, quantity?: number) => void;
-  removeItem: (productId: string, variantId?: string) => void;
-  updateQuantity: (productId: string, quantity: number, variantId?: string) => void;
-  clearCart: () => void;
   toggleCart: () => void;
-  
-  // Getters
-  getItemCount: () => number;
-  getTotalPrice: () => number;
-  getItemByProduct: (productId: string, variantId?: string) => CartItem | undefined;
 }
 
 export const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
+      // État initial
       items: [],
+      total: 0,
+      itemCount: 0,
+      currency: 'XOF',
       isOpen: false,
-      
-      addItem: (product, variant, quantity = 1) => {
-        const items = get().items;
-        const existingItemIndex = items.findIndex(
-          item => 
-            item.product.id === product.id && 
-            item.variant?.id === variant?.id
-        );
-        
-        if (existingItemIndex > -1) {
-          // Mettre à jour la quantité si l'item existe déjà
-          const updatedItems = [...items];
-          updatedItems[existingItemIndex].quantity += quantity;
-          set({ items: updatedItems });
+
+      // Actions
+      addItem: (product: Product, quantity = 1) => {
+        const currentItems = get().items;
+        const existingItem = currentItems.find(item => item.productId === product.id);
+
+        if (existingItem) {
+          // Mettre à jour la quantité si le produit existe déjà
+          get().updateQuantity(product.id, existingItem.quantity + quantity);
         } else {
-          // Ajouter un nouvel item
-          set({ 
-            items: [...items, { product, variant, quantity }]
+          // Ajouter nouveau produit
+          const newItem: CartItem = {
+            id: `cart-${product.id}-${Date.now()}`,
+            productId: product.id,
+            name: product.name,
+            price: product.pricing.hasDiscount && product.pricing.originalPrice 
+              ? product.pricing.originalPrice 
+              : product.price,
+            currency: product.currency,
+            quantity,
+            image: product.images.main,
+            slug: product.seo.slug,
+            volume: product.volume,
+          };
+
+          set(state => {
+            const newItems = [...state.items, newItem];
+            return {
+              items: newItems,
+              total: calculateTotal(newItems),
+              itemCount: calculateItemCount(newItems),
+            };
           });
         }
       },
-      
-      removeItem: (productId, variantId) => {
-        set({
-          items: get().items.filter(
-            item => !(
-              item.product.id === productId && 
-              item.variant?.id === variantId
-            )
-          )
+
+      removeItem: (productId: string) => {
+        set(state => {
+          const newItems = state.items.filter(item => item.productId !== productId);
+          return {
+            items: newItems,
+            total: calculateTotal(newItems),
+            itemCount: calculateItemCount(newItems),
+          };
         });
       },
-      
-      updateQuantity: (productId, quantity, variantId) => {
+
+      updateQuantity: (productId: string, quantity: number) => {
         if (quantity <= 0) {
-          get().removeItem(productId, variantId);
+          get().removeItem(productId);
           return;
         }
-        
-        set({
-          items: get().items.map(item =>
-            item.product.id === productId && item.variant?.id === variantId
+
+        set(state => {
+          const newItems = state.items.map(item =>
+            item.productId === productId
               ? { ...item, quantity }
               : item
-          )
+          );
+          return {
+            items: newItems,
+            total: calculateTotal(newItems),
+            itemCount: calculateItemCount(newItems),
+          };
         });
       },
-      
-      clearCart: () => set({ items: [] }),
-      
-      toggleCart: () => set(state => ({ isOpen: !state.isOpen })),
-      
-      getItemCount: () => {
-        return get().items.reduce((total, item) => total + item.quantity, 0);
+
+      clearCart: () => {
+        set({
+          items: [],
+          total: 0,
+          itemCount: 0,
+        });
       },
-      
-      getTotalPrice: () => {
-        return get().items.reduce((total, item) => {
-          const price = item.variant ? item.variant.price : item.product.price;
-          return total + (price * item.quantity);
-        }, 0);
+
+      getItemQuantity: (productId: string) => {
+        const item = get().items.find(item => item.productId === productId);
+        return item?.quantity || 0;
       },
-      
-      getItemByProduct: (productId, variantId) => {
-        return get().items.find(
-          item => 
-            item.product.id === productId && 
-            item.variant?.id === variantId
-        );
-      }
+
+      toggleCart: () => {
+        set(state => ({ isOpen: !state.isOpen }));
+      },
     }),
     {
-      name: 'cart-storage',
+      name: 'reen-cart-storage',
+      // Persister seulement les données importantes (pas isOpen)
+      partialize: (state) => ({
+        items: state.items,
+        total: state.total,
+        itemCount: state.itemCount,
+        currency: state.currency,
+      }),
     }
   )
 );
+
+// Fonctions utilitaires
+function calculateTotal(items: CartItem[]): number {
+  return items.reduce((total, item) => total + (item.price * item.quantity), 0);
+}
+
+function calculateItemCount(items: CartItem[]): number {
+  return items.reduce((count, item) => count + item.quantity, 0);
+}
+
+// Hook personnalisé pour actions courantes
+export function useCart() {
+  const store = useCartStore();
+  
+  return {
+    ...store,
+    
+    // Utilitaires supplémentaires
+    isEmpty: store.items.length === 0,
+    
+    // Formatage du total
+    getFormattedTotal: () => {
+      return new Intl.NumberFormat('fr-FR', {
+        style: 'currency',
+        currency: 'XOF',
+        minimumFractionDigits: 0,
+      }).format(store.total);
+    },
+    
+    // Obtenir le sous-total formaté
+    getFormattedSubtotal: () => {
+      return new Intl.NumberFormat('fr-FR', {
+        style: 'currency', 
+        currency: 'XOF',
+        minimumFractionDigits: 0,
+      }).format(store.total);
+    },
+    
+    // Vérifier si un produit est dans le panier
+    isInCart: (productId: string) => {
+      return store.items.some(item => item.productId === productId);
+    },
+
+    // Obtenir un item spécifique
+    getItem: (productId: string) => {
+      return store.items.find(item => item.productId === productId);
+    },
+  };
+}
